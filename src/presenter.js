@@ -1,15 +1,21 @@
-import sumar from "./sumador";
+import { generarSaludo } from "./functions.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+document.addEventListener("DOMContentLoaded", function () {
+    const botonSaludar = document.getElementById("saludar-btn");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    botonSaludar.addEventListener("click", function () {
+        const nombre = document.getElementById("nombre").value.trim();
+        const genero = document.getElementById("genero").value;
+        const edad = parseInt(document.getElementById("edad").value, 10);
+        const idioma = document.getElementById("idioma").value;
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+        if (!nombre) {
+            document.getElementById("resultado").innerText = 
+                idioma === "en" ? "Please enter a name." : "Por favor, ingresa un nombre.";
+            return;
+        }
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+        const mensaje = generarSaludo(nombre, genero, edad, idioma);
+        document.getElementById("resultado").innerText = mensaje;
+    });
 });
