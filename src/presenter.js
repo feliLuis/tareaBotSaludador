@@ -1,4 +1,4 @@
-import { generarSaludo } from "./functions.js";
+import { generarSaludo } from "./funciones.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const botonSaludar = document.getElementById("saludar-btn");
