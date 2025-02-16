@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xml:lang="es">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bot Saludador</title>
   </head>
   <body>
@@ -10,18 +12,14 @@
         <option value="M">Masculino</option>
         <option value="F">Femenino</option>
     </select>
-    
     <input type="number" id="edad" placeholder="Edad">
-    
     <select id="idioma">
         <option value="es">Español</option>
         <option value="en">Inglés</option>
     </select>
-    
     <button id="saludar-btn">Saludar</button>
-    
     <p id="resultado"></p>
-
     <script type="module" src="./src/presenter.js"></script>
+
   </body>
 </html>
